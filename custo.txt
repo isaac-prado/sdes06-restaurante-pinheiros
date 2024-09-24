@@ -1,0 +1,17 @@
+226 * 5% prospecção = 11.34 horas 680$
+Salário do Product Owner: $680
+
+226 * 15% analise = 34 horas
+Salário do Scrum Master: $2040
+
+226 * 10% planejamento = 22.68 horas
+Salário do Scrum Master: $1360.8
+
+226 * 50% implementação = 113 horas
+Salário do Desenvolvedor: $4520
+
+226 * 10% teste = 22.68 horas
+Salário do Tester: $763.8
+
+226 * 10% fechamento = 22.68 horas
+Salário do Scrum Master: $1360.8
