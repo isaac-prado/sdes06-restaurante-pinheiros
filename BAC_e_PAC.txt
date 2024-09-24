@@ -15,3 +15,6 @@ Salário do Tester: $763.8
 
 226 * 10% fechamento = 22.68 horas
 Salário do Scrum Master: $1360.8
+
+Budget at Completion: $10723
+Plan at Completion: 29 dias
