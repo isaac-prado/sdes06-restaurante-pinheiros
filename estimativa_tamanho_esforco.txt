@@ -1,0 +1,49 @@
+Número de Atores e Entidades
+
+Atores:  
+- Empregado do Local (Admin): 12 vezes (CLI01, CLI02, CLI03, CLI04, PED01, PED02, PED03, PED04, PRO01, PRO02, PRO03, PRO04)  
+- Cliente: 2 vezes (CLI03, PED02)  
+
+Total de Atores: 2  
+Total de Entidades: 3 (Cliente, Pedido, Produto)  
+
+Pontos de Caso de Uso (PCU)
+
+Ação simples (ex. Cadastrar, Consultar): 5 PCUs  
+Ação média (ex. Alterar, Remover): 10 PCUs  
+Ação complexa (ex. Fazer Pedido): 15 PCUs  
+
+- [CLI01] Cadastrar Cliente: 5 PCUs  
+- [CLI02] Consultar Cliente: 5 PCUs  
+- [CLI03] Alterar Cliente: 10 PCUs  
+- [CLI04] Remover Cliente: 10 PCUs  
+- [PED01] Adicionar Pedido: 5 PCUs  
+- [PED02] Consultar Pedido: 5 PCUs  
+- [PED03] Remover Pedido: 10 PCUs  
+- [PED04] Fazer Pedido: 15 PCUs  
+- [PRO01] Cadastrar Produto: 5 PCUs  
+- [PRO02] Consultar Produto: 5 PCUs  
+- [PRO03] Alterar Produto: 10 PCUs  
+- [PRO04] Remover Produto: 10 PCUs  
+
+Totalizando os Pontos de Caso de Uso
+
+Calculando o total:  
+Total PCU = 5 + 5 + 10 + 10 + 5 + 5 + 10 + 15 + 5 + 5 + 10 + 10 = 70 PCUs  
+
+Tamanho do Projeto
+
+Usando os fatores técnicos e ambientais:  
+Tamanho do Projeto = 70 × 1.2 × 0.9 = 75.6 UCP  
+
+Cálculo do Esforço
+
+Sabendo que 1 UCP = 3 horas de esforço:  
+Tamanho do Projeto × 3 = 75.6 × 3 ≈ 226.8 horas  
+
+Resumo Final  
+Número de Atores: 2  
+Número de Entidades: 3  
+Total PCU: 70  
+Tamanho do Projeto: 75.6 UCP  
+Esforço Estimado: 226.8 horas
