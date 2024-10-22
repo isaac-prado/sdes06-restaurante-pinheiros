@@ -1,3 +1,4 @@
+// TODO: Criar constructor para endereço
 export default class Endereco {
     logradouro: string;
     numero: string;
