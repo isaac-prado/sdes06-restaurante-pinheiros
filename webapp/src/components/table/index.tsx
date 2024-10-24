@@ -1,4 +1,4 @@
-import { Add, Edit, DeleteOutline, Check, Clear, ArrowDownward, Search, FirstPage, LastPage, ChevronRight, ChevronLeft, ArrowUpward, RemoveRedEye } from "@material-ui/icons";
+import { Add, Edit, DeleteOutline, Check, Clear, ArrowDownward, Search, FirstPage, LastPage, ChevronRight, ChevronLeft, ArrowUpward } from "@material-ui/icons";
 import MaterialTable, { Action } from "material-table";
 import React from "react";
 
@@ -10,7 +10,6 @@ interface TableProps{
 }
 
 export const Table: React.FC<TableProps> = (props: TableProps) => {
-
   const tableIcons: any = {
     Add:React.forwardRef((_) =><Add/>),
     Check:React.forwardRef((_) =><Check/>),
@@ -29,26 +28,49 @@ export const Table: React.FC<TableProps> = (props: TableProps) => {
 
 
   return (
-    <MaterialTable
-      title={props.title}
-      columns={props.columns}
-      data={props.data}
-      icons={tableIcons}
-      editable={{
-        onRowAdd: async(newData) => {}
-      }}
-      actions={props.actions}
-      options={{
-        actionsColumnIndex: -1,
-        headerStyle: {
-          backgroundColor: '#1976d2',
-          color: '#FFF',
-        },
-        rowStyle: {
-          backgroundColor: '#EEE',
-        },
-      }}
-    />
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <MaterialTable
+        title={props.title}
+        columns={props.columns}
+        data={props.data}
+        icons={tableIcons}
+        editable={{
+          onRowAdd: async (newData) => {}
+        }}
+        actions={props.actions}
+        options={{
+          actionsColumnIndex: -1,
+          headerStyle: {
+            backgroundColor: '#0d3530',
+            color: '#FFF',
+          },
+          rowStyle: {
+            backgroundColor: '#EEE'
+          },
+          showFirstLastPageButtons: false
+        }}
+        localization={{
+          body: {
+            emptyDataSourceMessage: 'Nenhum registro para exibir',
+          },
+          toolbar: {
+            searchTooltip: 'Pesquisar',
+            searchPlaceholder: 'Pesquisar',
+          },
+          pagination: {
+            labelRowsSelect: 'linhas',
+            labelDisplayedRows: '{from}-{to} de {count}',
+            labelRowsPerPage: 'Linhas por página:',
+            firstTooltip: 'Primeira página',
+            previousTooltip: 'Página anterior',
+            nextTooltip: 'Próxima página',
+            lastTooltip: 'Última página',
+          },
+          header: {
+            actions: 'Ações',
+          },
+        }}
+      />
+    </div>
   );
-
-}
+};

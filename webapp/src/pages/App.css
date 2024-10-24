@@ -1,5 +1,30 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #0d3530;
+}
+
+.logo {
+  width: 160px;
+  height: auto;
+  margin: 0 auto;
+}
+/* Estilos gerais da aplicação */
 .App {
   text-align: center;
+  background-color: #edf0e5;
 }
 
 .App-logo {
