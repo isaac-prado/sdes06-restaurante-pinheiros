@@ -2,22 +2,28 @@ import React from 'react';
 import MaterialTable from 'material-table';
 import { Switch,Button } from '@material-ui/core';
 
-import { Add, Check, Clear, DeleteOutline, Edit, SaveAlt, Search,
+import { Add, Check, Clear, DeleteOutline, Edit, Search,
   FirstPage, ArrowDownward,
   LastPage,
   ChevronRight,
-  ChevronLeft, 
+  ChevronLeft,
+  ArrowUpward, 
+  RemoveRedEye,
  } from "@material-ui/icons";
+import { Table } from '../components/table';
+import { customerMock } from '../services/customerService';
 
 
 
 interface RowData {
   name: string;
   isActive: boolean;
+  credit: number
 }
 
 const columns = [
   { title: 'Nome', field: 'name' },
+  { title: 'Crédito', field: 'credit' },
   {
     title: 'Ativo',
     field: 'isActive',
@@ -28,11 +34,7 @@ const columns = [
 ]
 
 const App: React.FC = () => {
-  const [customers, setData] = React.useState<RowData[]>([
-    { name: 'John', isActive: true},
-    { name: 'Ellen', isActive: true},
-  ]);
-
+  
   return (
     <>
       <div style={{
@@ -49,38 +51,7 @@ const App: React.FC = () => {
           {(new Date()).toUTCString()}
         </div>
       </div>
-      <MaterialTable
-          title="Gestão de Clientes"
-          columns={columns}
-          data={customers}
-          options={{
-            actionsColumnIndex: -1,
-            headerStyle: {
-              backgroundColor: '#1976d2',
-              color: '#FFF',
-            },
-            rowStyle: {
-              backgroundColor: '#EEE',
-            },
-          }}
-          icons={{
-            Add:React.forwardRef((obj, ref) =><Add/>),
-            Edit:React.forwardRef((obj, ref) =><Edit/>),
-            Delete:React.forwardRef((obj, ref) =><DeleteOutline/>),
-            Check:React.forwardRef((obj, ref) =><Check/>),
-            Clear:React.forwardRef((obj, ref) =><Clear/>),
-            SortArrow:React.forwardRef((obj, ref) =><ArrowDownward/>),
-            Search:React.forwardRef((obj, ref) =><Search/>),
-            FirstPage:React.forwardRef((obj, ref) =><FirstPage/>),
-            LastPage:React.forwardRef((obj, ref) =><LastPage/>),
-            NextPage:React.forwardRef((obj, ref) =><ChevronRight/>),
-            PreviousPage:React.forwardRef((obj, ref) =><ChevronLeft/>),
-          }}
-  
-          editable={{
-            onRowAdd: async(newData) => {}
-          }}
-        />
+      <Table title="Gestão de assinaturas" columns={columns} data={customerMock}/>
     </>
   );
 };
