@@ -2,11 +2,23 @@ import IClienteRepository from "../../core/aplicacao/contratos/iClienteRepositor
 import Cliente from "../../core/dominio/entidades/cliente";
 
 export default class ClienteRepository implements IClienteRepository {
+    // simulacao banco
+    private clientes: Cliente[] = []
+
     consultarCliente(cpf: string | null, nome: string | null): Promise<Cliente> {
-        throw new Error("Method not implemented.");
+        const clienteEncontrado = this.clientes.find(cliente => {
+            (cpf && cliente.cpf === cpf) || (nome && cliente.nome === nome)
+        });
+
+        if(!clienteEncontrado) {
+            throw new Error("Cliente não encontrado");
+        }
+
+        return Promise.resolve(clienteEncontrado);        
     }
 
-    async criarCliente(nome: string, cpf: string, telefone: string, saldo: number, email: string): Promise<void> {
-        console.log('Criando cliente...');
+    async criarCliente(cliente: Cliente): Promise<void> {
+        this.clientes.push(cliente);
+        console.log(`Cliente ${cliente.nome} criado com sucesso.`)
     }
 }
